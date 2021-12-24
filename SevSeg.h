@@ -36,7 +36,7 @@ class SevSeg
 public:
   SevSeg();
 
-  void refreshDisplay();
+  void refreshDisplay(bool FlagBlink);
   void begin(uint8_t hardwareConfig, uint8_t numDigitsIn, const uint8_t digitPinsIn[],
           const uint8_t segmentPinsIn[], bool resOnSegmentsIn=0,
           bool updateWithDelaysIn=0, bool leadingZerosIn=0,

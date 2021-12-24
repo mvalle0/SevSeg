@@ -208,7 +208,7 @@ void SevSeg::begin(uint8_t hardwareConfig, uint8_t numDigitsIn, const uint8_t di
 //    on. It will move to the next digit/segment after being called again (if
 //    enough time has passed).
 
-void SevSeg::refreshDisplay() {
+void SevSeg::refreshDisplay(bool FlagBlink) {
 
   if (!updateWithDelays) {
     uint32_t us = micros();
@@ -267,8 +267,8 @@ void SevSeg::refreshDisplay() {
       prevUpdateIdx++;
       if (prevUpdateIdx >= numDigits) prevUpdateIdx = 0;
 
-      // Illuminate the required segments for the new digit
-      digitOn(prevUpdateIdx);
+        // Illuminate the required segments for the new digit
+      if(!FlagBlink)  digitOn(prevUpdateIdx);
     }
   }
 
